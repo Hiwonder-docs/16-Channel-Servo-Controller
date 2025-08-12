@@ -216,7 +216,7 @@ The servo deviation can be set in this area. For specific operations on deviatio
 * If the `CH341` serial port driver has been installed, you can skip this step.
   :::
 
-(1) Locate and open the `ch341ser.exe` serial port driver installation package in the "PC Software Installation Package" in the same directory as this section.
+(1) Locate and open the `ch341ser.exe` serial port driver installation package in the "**PC Software Installation Package**" in the same directory as this section.
 
 <img src="../_static/media/chapter_1/image56.png" class="common_img" />
 
@@ -261,7 +261,7 @@ The servo will not automatically return to the neutral position immediately afte
 
 (3) Drag the slider below the servo ID to make the servo rotate to 180° and 0° positions respectively.
 
-<table class="" style="text-align: center;width: 600px;">
+<table class="nobg-" style="text-align: center;width: 600px;">
     <tbody>
     <tr>
         <td><img src="../_static/media/chapter_1/image64.png" width="280px"></td>
