@@ -18,3 +18,4 @@
    docs/5_STM32_Development.md
    docs/6_Raspberry_Pi_Development.md
    docs/Appendix.md
+   Download <https://drive.google.com/drive/folders/1NxK-EzCAg5vRjmZzZkbK78N-vzGXWa6y?usp=sharing>

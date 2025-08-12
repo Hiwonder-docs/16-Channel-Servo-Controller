@@ -228,15 +228,15 @@ The servo deviation can be set in this area. For specific operations on deviatio
 
 The following three images show the three basic positions of a servo motor: neutral position, maximum position, and minimum position. To provide a clear visual reference, a servo horn is included as an example. The label is placed on the right side of the servo horn, representing the initial position.
 
-<img src="../_static/media/chapter_1/image58.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image58.jpeg" class="common_img" style="width:600px;"/>
 
 Neutral position: 90° servo angle, which is corresponding to the position of 1500
 
-<img src="../_static/media/chapter_1/image59.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image59.jpeg" class="common_img" style="width:600px;"/>
 
 Minimum position: 0°servo angle, which is corresponding to the position of 500
 
-<img src="../_static/media/chapter_1/image60.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image60.jpeg" class="common_img" style="width:600px;"/>
 
 Maximum position: 180°servo angle, which is corresponding to the position of 2500
 
@@ -261,7 +261,7 @@ The servo will not automatically return to the neutral position immediately afte
 
 (3) Drag the slider below the servo ID to make the servo rotate to 180° and 0° positions respectively.
 
-<table class="nobg-" style="text-align: center;width: 600px;">
+<table class="" style="text-align: center;width: 600px;">
     <tbody>
     <tr>
         <td><img src="../_static/media/chapter_1/image64.png" width="280px"></td>
@@ -367,15 +367,15 @@ Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the s
 
 (1) If the servo returns to the neutral position as shown in the figure below, no adjustment is needed.
 
-<img src="../_static/media/chapter_1/image83.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image83.jpeg" class="common_img" style="width:600px;"/>
 
 (2) If the angle between the servo arm and the servo in the horizontal plane is less than 13 degrees, it can be adjusted to return to the neutral position via the PC software. It is a small deviation and can be adjusted based on [1.6.3 Small Deviation Adjustment](). The deviation is as follows:
 
-<img src="../_static/media/chapter_1/image84.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image84.jpeg" class="common_img" style="width:600px;"/>
 
 (3) If the angle between the servo arm and the servo in the horizontal plane is greater than 13 degrees, it cannot be adjusted to return to the neutral position via the PC software. It is a large deviation and can be adjusted based on [1.6.4 Large Deviation Adjustment](). The deviation is as follows:
 
-<img src="../_static/media/chapter_1/image85.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image85.jpeg" class="common_img" style="width:600px;"/>
 
 ### 1.6.3 Small Deviation Adjustment
 
@@ -414,7 +414,9 @@ For large deviation adjustment, the servo arm needs to be removed from the servo
 
 (1) Remove the shaft screw and then the servo arm.
 
-<img src="../_static/media/chapter_1/image91.jpeg" class="common_img" /> <img src="../_static/media/chapter_1/image92.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image91.jpeg" class="common_img" style="width:600px;"/>
+
+<img src="../_static/media/chapter_1/image92.jpeg" class="common_img" style="width:600px;"/>
 
 (2) Open the servo controller, and click **"Reset servo"**.
 
@@ -422,7 +424,7 @@ For large deviation adjustment, the servo arm needs to be removed from the servo
 
 (3) After the servo returns to the neutral position, close the controller. Install the servo arm parallel to the servo in the horizontal plane. Then, tighten the screw on main shaft .
 
-<img src="../_static/media/chapter_1/image83.jpeg" class="common_img" />
+<img src="../_static/media/chapter_1/image83.jpeg" class="common_img" style="width:600px;"/>
 
 (4) Open the controller, and refer to **"6.2 Small Deviation Adjustment"** to adjust the servo.
 

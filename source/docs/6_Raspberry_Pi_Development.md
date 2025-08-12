@@ -109,6 +109,7 @@ According to the communication protocol, the frame header, data length, command,
     buf.append(LOBOT_CMD_SERVO_MOVE)  
     buf.append(0x01)  
 ```
+
 Next, the time parameter passed in is filtered to ensure it falls within the range of (0, 30000). Values outside this range are clamped to 0 and 30000, respectively. This ensures that after the data is sent over the serial port, the controller can correctly recognize it. Then, the time parameter is split into high and low bytes using `list()`, where `little` indicates low byte first. These two bytes are then sent to the serial port.
 
 {lineno-start=44
@@ -120,6 +121,7 @@ Next, the time parameter passed in is filtered to ensure it falls within the ran
     buf.append(time_list[0])
     buf.append(time_list[1])
 ```
+
 After that, the ID and position values are also filtered. If the incoming ID is less than 1 or greater than 254, it is clamped to 1 or 254, respectively. The position value is handled similarly: values below 0 are set to 0. Then, send the servo rotation position to the serial port in the form of two bytes.
 
 {lineno-start=50}
@@ -134,6 +136,7 @@ After that, the ID and position values are also filtered. If the incoming ID is 
     buf.append(pulse_list[0])
     buf.append(pulse_list[1]) 
 ```
+
 Finally, the `buf` data is sent to the serial port using the `write()` method.
 
 {lineno-start=59}
@@ -141,6 +144,7 @@ Finally, the `buf` data is sent to the serial port using the `write()` method.
 ```python {lineno-start=}
     serialHandle.write(buf)
 ```
+
 (2) UART Initialization
 
 {lineno-start=11}
