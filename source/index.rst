@@ -11,7 +11,7 @@
    :maxdepth: 2
    :caption: 16-Channel Servo Controller
 
-   docs/1_User Manual_formatted.md
+   docs/1_User_Manual_formatted.md
    docs/2_Communication_Protocol.md
    docs/3_Arduino_Development.md
    docs/4_C51_Development.md
