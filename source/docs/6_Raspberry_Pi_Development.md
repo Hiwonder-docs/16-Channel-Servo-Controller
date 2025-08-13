@@ -6,7 +6,7 @@
 
 This example uses an Raspberry Pi controller and a 16-ch servo controller, powered by a 7.4V 6000mAh lithium battery for low-voltage servos. Connect the serial port of the 16-Channel Servo Controller to the serial port of the Raspberry Pi controller.
 
-<img src="../_static/media/chapter_6/section_1/01/media/image3.jpeg" class="common_img" />
+<img src="../_static/media/chapter_6/image3.jpeg" class="common_img" />
 
 :::{Note}
 * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.
@@ -26,7 +26,7 @@ Make sure the library files are placed in the same directory as the program.
 
 :::
 
-<img src="../_static/media/chapter_6/section_1/01/media/image4.png" class="common_img" />
+<img src="../_static/media/chapter_6/image4.png" class="common_img" />
 
 Open the command-line terminal and enter the following command to add execution permissions:
 
