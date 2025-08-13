@@ -66,6 +66,8 @@ The supply voltage must not exceed 8.4V. If it exceeds 8.4V, it may damage the c
 
 The servo and the servo arm used in this lesson are for demonstration only. Please rely on the actual situation.
 
+<p id="anchor_1_3_1"></p>
+
 ### 1.3.1 Setup PC Software Control Environment
 
 * **Setup Hardware Environment**
@@ -80,7 +82,7 @@ The required materials are shown below:
 | Battery connection cable | 1 |
 | 7.4V lithium battery | 1 |
 
-(1) Step 1: Connect the `LD-3015MG` servo to any servo port on the 16-channel servo controller. Let’s take connecting to port 1 as an example. Connect the white wire to the **"S"** pin. The positive and negative terminals must be matched correctly.
+(1) Step 1: Connect the `LD-3015MG` servo to any servo port on the 16-channel servo controller. Let's take connecting to port 1 as an example. Connect the white wire to the **"S"** pin. The positive and negative terminals must be matched correctly.
 
 <img src="../_static/media/chapter_1/image4.png" class="common_img" />
 
@@ -99,7 +101,7 @@ connect the red wire to **"+"**, and the black wire to **"-"**. The positive and
 
 * **Setup Software Environment**
 
-Locate the [Hiwonder Servo Control Steup.exe]() in [Appendix -> PC Software](), and double-click to install it.
+Locate the **Hiwonder Servo Control Steup.exe** in [Appendix -> PC Software](Appendix.md), and double-click to install it.
 
 <img src="../_static/media/chapter_1/image8.png" class="common_img" />
 
@@ -197,7 +199,7 @@ Run, open, add, delete, modify, and view action groups and action group files.
 
 * **Deviation setting**
 
-The servo deviation can be set in this area. For specific operations on deviation adjustment, please refer to [1.6 Servo Deviation Adjustment]().
+The servo deviation can be set in this area. For specific operations on deviation adjustment, please refer to [1.6 Servo Deviation Adjustment](#anchor_1_6).
 
 | Icon | Function Description |
 |:--:|:---|
@@ -244,7 +246,7 @@ Maximum position: 180°servo angle, which is corresponding to the position of 25
 
 For Wired connection, the servo controller needs to be connected to the computer with a USB cable.
 
-(1) Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the servo controller and servo to the PC software.Check the box for servo 1. You can check based on the actual servo number.
+(1) Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to connect the servo controller and servo to the PC software.Check the box for servo 1. You can check based on the actual servo number.
 
 <img src="../_static/media/chapter_1/image61.png" class="common_img" />
 
@@ -282,9 +284,9 @@ The servo will not automatically return to the neutral position immediately afte
 
 ### 1.5.1 Edit Action Group
 
-Let’s demonstrate on connecting a servo 1, and making it rotate left and right.
+Let's demonstrate on connecting a servo 1, and making it rotate left and right.
 
-(1) Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the servo to the PC software, and check the box for servo 1.For the selection of servos, please rely on the actual situation.
+(1) Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to connect the servo to the PC software, and check the box for servo 1.For the selection of servos, please rely on the actual situation.
 
 (2) Click **"Reset servo"** to make the servo in the neutral position.
 
@@ -325,7 +327,6 @@ Let’s demonstrate on connecting a servo 1, and making it rotate left and right
 (11) After the action editing is completed, click **"Save Action File"** to save the edited action group file to the local computer.
 
 :::{Note}
-
 The save path can be customized. For easy calling later, it is recommended to name the file as **"number+action group name"**. For example, **"No.10 Rotate Left and Right"**. When calling it later, you only need to input the action group number **"10"**.
 :::
 
@@ -335,13 +336,13 @@ The save path can be customized. For easy calling later, it is recommended to na
 
 After saving the action group, if you want to run the action group again, you can directly run it through the **"Online Run"** button, or run it by calling the **"Action Group Run"** button in the action list. The method of calling the action group is as follows:
 
-(1) Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the servo to the PC software.
+(1) Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to connect the servo to the PC software.
 
-(2) Select an action group number in the dropdown list of the action group. Let’s take No. 10 as an example. You can select it based on you own needs. No.100 is the action group for offline control. When using the offline function, the action group can be downloaded to 100.
+(2) Select an action group number in the dropdown list of the action group. Let's take No. 10 as an example. You can select it based on you own needs. No.100 is the action group for offline control. When using the offline function, the action group can be downloaded to 100.
 
 <img src="../_static/media/chapter_1/image78.png" class="common_img" />
 
-(3) After selecting the action group number, click **"Download"** to download the actions in the action details list to the **"Action Group"** number. When you hear a ‘beep’ sound from the buzzer, and a pop-up window appears on the page, it means that the download is completed.
+(3) After selecting the action group number, click **"Download"** to download the actions in the action details list to the **"Action Group"** number. When you hear a 'beep' sound from the buzzer, and a pop-up window appears on the page, it means that the download is completed.
 
 <img src="../_static/media/chapter_1/image79.png" class="common_img" />
 
@@ -349,15 +350,17 @@ After saving the action group, if you want to run the action group again, you ca
 
 <img src="../_static/media/chapter_1/image80.png" class="common_img" />
 
+<p id="anchor_1_6"></p>
+
 ## 1.6 Servo Deviation Adjustment
 
-The meshing of the servo shaft with the servo arm or servo horn is based on gears. Therefore, it’s difficult to install the servo arm or servo horn to a specific position during installation. In this case, you can use the PC software to adjust the deviation of the servo to make it rotate to a specific position.
+The meshing of the servo shaft with the servo arm or servo horn is based on gears. Therefore, it's difficult to install the servo arm or servo horn to a specific position during installation. In this case, you can use the PC software to adjust the deviation of the servo to make it rotate to a specific position.
 
 This section takes the example of adjusting the servo arm of servo 1 to a 90-degree position. The adjustment method for other servos is the same.
 
 ### 1.6.1 Getting Ready
 
-Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the servo controller and the servo to the PC. Select servo 1. The number can be checked based on the actual situation.
+Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to connect the servo controller and the servo to the PC. Select servo 1. The number can be checked based on the actual situation.
 
 <img src="../_static/media/chapter_1/image81.png" class="common_img" />
 
@@ -369,13 +372,15 @@ Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the s
 
 <img src="../_static/media/chapter_1/image83.jpeg" class="common_img" style="width:600px;"/>
 
-(2) If the angle between the servo arm and the servo in the horizontal plane is less than 13 degrees, it can be adjusted to return to the neutral position via the PC software. It is a small deviation and can be adjusted based on [1.6.3 Small Deviation Adjustment](). The deviation is as follows:
+(2) If the angle between the servo arm and the servo in the horizontal plane is less than 13 degrees, it can be adjusted to return to the neutral position via the PC software. It is a small deviation and can be adjusted based on [1.6.3 Small Deviation Adjustment](#anchor_1_6_3). The deviation is as follows:
 
 <img src="../_static/media/chapter_1/image84.jpeg" class="common_img" style="width:600px;"/>
 
-(3) If the angle between the servo arm and the servo in the horizontal plane is greater than 13 degrees, it cannot be adjusted to return to the neutral position via the PC software. It is a large deviation and can be adjusted based on [1.6.4 Large Deviation Adjustment](). The deviation is as follows:
+(3) If the angle between the servo arm and the servo in the horizontal plane is greater than 13 degrees, it cannot be adjusted to return to the neutral position via the PC software. It is a large deviation and can be adjusted based on [1.6.4 Large Deviation Adjustment](#anchor_1_6_4). The deviation is as follows:
 
 <img src="../_static/media/chapter_1/image85.jpeg" class="common_img" style="width:600px;"/>
+
+<p id="anchor_1_6_3"></p>
 
 ### 1.6.3 Small Deviation Adjustment
 
@@ -383,10 +388,10 @@ The small deviation can be directly adjusted by dragging the deviation slider of
 
 :::{Note}
 
-The adjustable range is between -100 and 100. If the servo arm can be adjusted to be parallel to the servo in the horizontal plane within this range, it is a small deviation. If the adjustment range exceeds this range, it is a large deviation. Please refer to [1.6.4 Large Deviation Adjustment]() to adjust.
+The adjustable range is between -100 and 100. If the servo arm can be adjusted to be parallel to the servo in the horizontal plane within this range, it is a small deviation. If the adjustment range exceeds this range, it is a large deviation. Please refer to [1.6.4 Large Deviation Adjustment](#anchor_1_6_4) to adjust.
 :::
 
-(1) Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the servo controller and the servo to the PC.Select servo 1. The number can be checked based on the actual situation.
+(1) Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to connect the servo controller and the servo to the PC.Select servo 1. The number can be checked based on the actual situation.
 
 <img src="../_static/media/chapter_1/image81.png" class="common_img" />
 
@@ -406,7 +411,13 @@ The adjustable range is between -100 and 100. If the servo arm can be adjusted t
 
 (5) After adjusting, click **"Download"** to download the deviation value to the controller. If it is not downloaded, the adjustment is invalid.
 
-<img src="../_static/media/chapter_1/image88.png" class="common_img" /><img src="../_static/media/chapter_1/image89.png" class="common_img" /><img src="../_static/media/chapter_1/image90.png" class="common_img" />
+<img src="../_static/media/chapter_1/image88.png" class="common_img" />
+
+<img src="../_static/media/chapter_1/image89.png" class="common_img" />
+
+<img src="../_static/media/chapter_1/image90.png" class="common_img" />
+
+<p id="anchor_1_6_4"></p>
 
 ### 1.6.4 Large Deviation Adjustment
 
@@ -434,13 +445,15 @@ The 16-channel Bluetooth servo controller can not only run action groups online,
 
 The specific control method is as follows:
 
-(1) Please refer to [1.3.1 Setup PC Software Control Environment]() to connect the servo controller and servo to the PC software.
+(1) Please refer to [1.3.1 Setup PC Software Control Environment](#anchor_1_3_1) to connect the servo controller and servo to the PC software.
 
 <img src="../_static/media/chapter_1/image93.png" class="common_img" />
 
 (2) Click **"Open action file"** to open the action group **"No.10 Turn left and right"**.
 
-<img src="../_static/media/chapter_1/image94.png" class="common_img" /> <img src="../_static/media/chapter_1/image95.png" class="common_img" />
+<img src="../_static/media/chapter_1/image94.png" class="common_img" />
+
+<img src="../_static/media/chapter_1/image95.png" class="common_img" />
 
 <img src="../_static/media/chapter_1/image96.png" class="common_img" />
 

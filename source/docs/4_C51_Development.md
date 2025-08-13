@@ -34,7 +34,7 @@ The pin wiring method is shown in the table below:
 
 ### 4.1.2 Environment Configuration
 
-Install `Keil4` software on PC. The software package is stored in [Appendix->C51 Software](). For the detailed operations of `Keil4`, please refer to the relevant tutorials.
+Install `Keil4` software on PC. The software package is stored in [Appendix->C51 Software](Appendix.md). For the detailed operations of `Keil4`, please refer to the relevant tutorials.
 
 ## 4.2 Development Case
 
@@ -44,7 +44,7 @@ In this example, the serial port is used to send instructions to the 16-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in **[Appendix->C51 Software]()**:
+Open the STC-ISP download tool in **[Appendix->C51 Software](Appendix.md)**:
 
 <img src="../_static/media/chapter_4/section_1/media/image7.png" class="common_img" />
 
@@ -52,7 +52,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/section_1/media/image8.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in **[C51 Program->Case 1 Control PWM Servo Movement->LobotServoTurn_C51->OBJ]()**.
+Click **"Open Code File"** and find the hex file in **[C51 Program->Case 1 Control PWM Servo Movement->LobotServoTurn_C51->OBJ](https://drive.google.com/drive/folders/11Ivd_sg3BBmZ6DdHosbXB74E6AmqsVkz?usp=sharing)**.
 
 <img src="../_static/media/chapter_4/section_1/media/image9.png" class="common_img" />
 
@@ -70,7 +70,7 @@ After running the program, the servo will continuously swing back and forth betw
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/11Ivd_sg3BBmZ6DdHosbXB74E6AmqsVkz?usp=sharing)
 
 (1) Import Necessary Libraries
 
@@ -81,12 +81,14 @@ Import the package in `main.c` program:
 #include "include.h"
 #include "lsc2d.h"
 ```
+
 Import the package in `include.h` file:
 
 {lineno-start=1}
 ```c
 #include "include.h"
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo.
 
 (2) UART Initialization
@@ -104,6 +106,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses Timer 2 to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Control Servo Movement
@@ -127,6 +130,7 @@ int main(void)
 
 }
 ```
+
 Before running the main program, call the `InitUart()` function to initialize the UART. Then, use functions from the `lsc2d.c` file to send data to the 16-ch servo controller and control the servo’s movement.
 
 ### 4.2.2 Case 2 Control PWM Servo Speed
@@ -135,7 +139,7 @@ In this example, the serial port is used to send instructions to the 16-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in **[Appendix->C51 Software]()**:
+Open the STC-ISP download tool in **[Appendix->C51 Software](Appendix.md)**:
 
 <img src="../_static/media/chapter_4/section_1/media/image7.png" class="common_img" />
 
@@ -143,7 +147,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/section_1/media/image8.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in **[C51 Program->Case 2 Control PWM Servo Speed->LobotServoSpeed_C51->OBJ]()**.
+Click **"Open Code File"** and find the hex file in **[C51 Program->Case 2 Control PWM Servo Speed->LobotServoSpeed_C51->OBJ](https://drive.google.com/drive/folders/1eXe7-TLbv6XT9cD4JPDU1kWjJy35fMAT?usp=sharing)**.
 
 <img src="../_static/media/chapter_4/section_1/media/image16.png" class="common_img" />
 
@@ -161,7 +165,7 @@ After running the program, the servo will rotate from position 500 to position 2
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1eXe7-TLbv6XT9cD4JPDU1kWjJy35fMAT?usp=sharing)
 
 (1) Import Necessary Libraries
 
@@ -172,12 +176,14 @@ Import the package in `main.c` program:
 #include "include.h"
 #include "lsc2d.h"
 ```
+
 Import the package in `include.h` file:
 
 {lineno-start=1}
 ```c
 #include "include.h"
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo.
 
 (2) UART Initialization
@@ -195,6 +201,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses Timer 2 to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Main Program
@@ -225,6 +232,7 @@ int main(void)
 
 }
 ```
+
 Before running the main program, call the `InitUart()` function to initialize the UART. Then, use functions from the `lsc2d.c` file to send data to the 16-ch servo controller, enabling the servos to rotate at different speeds.
 
 ### 4.2.3 Case 3 Control Multiple Servos
@@ -233,7 +241,7 @@ In this example, the serial port is used to send instructions to the 16-ch servo
 
 * **Run Program**
 
-Open the STC-ISP download tool in **[Appendix->C51 Software]()**:
+Open the STC-ISP download tool in **[Appendix->C51 Software](Appendix.md)**:
 
 <img src="../_static/media/chapter_4/section_1/media/image7.png" class="common_img" />
 
@@ -241,7 +249,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/section_1/media/image8.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in **[C51 Development->02 Source Code->Case 3 Control Multiple Servos->OBJ->LobotServosTurn_C51]()**.
+Click **"Open Code File"** and find the hex file in **[C51 Development->02 Source Code->Case 3 Control Multiple Servos->OBJ->LobotServosTurn_C51](https://drive.google.com/drive/folders/1ANb-QZcwFut7V22HrK-y3nVEUu2B0kMC?usp=sharing)**.
 
 <img src="../_static/media/chapter_4/section_1/media/image19.png" class="common_img" />
 
@@ -257,7 +265,7 @@ After running the program, Servo 1 and Servo 2 will move back and forth between 
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1ANb-QZcwFut7V22HrK-y3nVEUu2B0kMC?usp=sharing)
 
 (1) Import Necessary Libraries
 
@@ -268,12 +276,14 @@ Import the package in `main.c` program:
 #include "include.h"
 #include "lsc2d.h"
 ```
+
 Import the package in `include.h` file:
 
 {lineno-start=1}
 ```c
 #include "include.h"
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo.
 
 (2) UART Initialization
@@ -292,6 +302,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses Timer 2 to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Define Servo Structure
@@ -300,6 +311,7 @@ In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` r
 ```c
 LobotServo servos[3];		 
 ```
+
 Store the servos to be controlled and their related information in the `LobotServo` structure, which is mainly used for controlling multiple servos.
 
 (4) Control Servo Movement
@@ -337,6 +349,7 @@ int main(void)
 
 }
 ```
+
 The servo information stored in the structure is sent to the 16-ch servo controller via the serial port. The controller parses the received commands and moves each corresponding servo to its specified position.
 
 ### 4.2.4 Case 4 Central Position & Deviation Adjustment
@@ -349,7 +362,7 @@ Servo deviation is caused by the spacing of the splines on the servo arm—a mec
 
 * **Run Program**
 
-Open the STC-ISP download tool in **[Appendix->C51 Software]()**:
+Open the STC-ISP download tool in **[Appendix->C51 Software](Appendix.md)**:
 
 <img src="../_static/media/chapter_4/section_1/media/image7.png" class="common_img" />
 
@@ -357,7 +370,7 @@ The STC-ISP configuration is shown as follow:
 
 <img src="../_static/media/chapter_4/section_1/media/image8.png" class="common_img" />
 
-Click **"Open Code File"** and find the hex file in **[C51 Program->Case 4 Central Position & Deviation Adjustment->LobotServosDeviation_C51->OBJ]()**.
+Click **"Open Code File"** and find the hex file in **[C51 Program->Case 4 Central Position & Deviation Adjustment->LobotServosDeviation_C51->OBJ](https://drive.google.com/drive/folders/1Bt8oScnVgZ968km_CwodQ7AWCzsMgBML?usp=sharing)**.
 
 <img src="../_static/media/chapter_4/section_1/media/image22.png" class="common_img" />
 
@@ -373,7 +386,7 @@ The servo first returns to the central position. After a short delay, it rotates
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1Bt8oScnVgZ968km_CwodQ7AWCzsMgBML?usp=sharing)
 
 (1) Import Necessary Libraries
 
@@ -384,12 +397,14 @@ Import the package in `main.c` program:
 #include "include.h"
 #include "lsc2d.h"
 ```
+
 Import the package in `include.h` file:
 
 {lineno-start=1}
 ```c
 #include "include.h"
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo.
 
 (2) UART Initialization
@@ -407,6 +422,7 @@ void InitUart(void)
 
 }
 ```
+
 In the `uart.c` file, initialize the UART by enabling UART1 through the `SCON` register. The `AUCR` and `IE2` registers are configured so that UART1 uses Timer 2 to generate the baud rate. Set the initial count values of `T2L` and `T2H` to configure the baud rate to 9600.
 
 (3) Control Servo Movement
@@ -433,4 +449,5 @@ int main(void)
 
 }
 ```
+
 Before the main program runs, define the servo deviation. First, move the servo to its central position and hold for 2 seconds. Then, based on this central position, apply an additional deviation to move the servo to the new target position, and keep it at this deviation angle.

@@ -16,9 +16,9 @@ This example uses an Raspberry Pi controller and a 16-ch servo controller, power
 
 ### 6.1.2 Environment Configuration
 
-Install `VNC` software on PC. The software package is stored in [Appendix-> Remote Connection Software (for Raspberry Pi)](). For the detailed operations of VNC, please refer to the relevant tutorials.
+Install `VNC` software on PC. The software package is stored in [Appendix-> Remote Connection Software (for Raspberry Pi)](Appendix.md). For the detailed operations of VNC, please refer to the relevant tutorials.
 
-Drag the program and library file SDK into the Raspberry Pi system image via `MobaXterm`. The software package is located under [Appendix -> Remote Desktop Connection Tool (for Raspberry Pi and Jetson)](). For detailed instructions on how to use `MobaXterm`, refer to the corresponding document. In this example, the files are placed on the desktop. 
+Drag the program and library file SDK into the Raspberry Pi system image via `MobaXterm`. The software package is located under [Appendix -> Remote Desktop Connection Tool (for Raspberry Pi and Jetson)](Appendix.md). For detailed instructions on how to use `MobaXterm`, refer to the corresponding document. In this example, the files are placed on the desktop. 
 
 :::{Note}
 
@@ -60,33 +60,34 @@ After running the program, the servo will continuously swing back and forth betw
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1X65Y907eX8T_fvru6V2uBTdTVVkMiawo?usp=sharing)
 
 (1) Import Necessary Libraries
 
 {lineno-start=1}
 
-```python {lineno-start=}
+```python 
 import ServoControl
 import time 
 ```
+
 The library includes the necessary modules for communicating with the servo controller. You can use the predefined variables and functions in it to control the servo. In the `ServoControl` library file, the main method called is `setPWMServoMove()`.
 
 {lineno-start=13}
 
-```python {lineno-start=}
+```python
  
 def setBusServoMove(servo_id, servo_pulse, time):
-    buf = bytearray(b'\x55\x55')   
-    buf.append(0x08)  
-    buf.append(LOBOT_CMD_SERVO_MOVE)  
-    buf.append(0x01)  
+    buf = bytearray(b'\x55\x55')
+    buf.append(0x08)
+    buf.append(LOBOT_CMD_SERVO_MOVE)
+    buf.append(0x01)
     
     time = 0 if time < 0 else time
     time = 30000 if time > 30000 else time
-    time_list = list(time.to_bytes(2, 'little'))     
+    time_list = list(time.to_bytes(2, 'little'))
     buf.append(time_list[0])
-    buf.append(time_list[1])    
+    buf.append(time_list[1])
 
     servo_id = 254 if (servo_id < 1 or servo_id > 254) else servo_id
     buf.append(servo_id) #id
@@ -99,25 +100,26 @@ def setBusServoMove(servo_id, servo_pulse, time):
 
     serialHandle.write(buf)
 ```
+
 According to the communication protocol, the frame header, data length, command, and the number of servos to be controlled are first sent to the serial port.
 
 {lineno-start=39}
 
-```python {lineno-start=}
-    buf = bytearray(b'\x55\x55')   
-    buf.append(0x08)  
-    buf.append(LOBOT_CMD_SERVO_MOVE)  
-    buf.append(0x01)  
+```python
+    buf = bytearray(b'\x55\x55')
+    buf.append(0x08)
+    buf.append(LOBOT_CMD_SERVO_MOVE)
+    buf.append(0x01)
 ```
 
 Next, the time parameter passed in is filtered to ensure it falls within the range of (0, 30000). Values outside this range are clamped to 0 and 30000, respectively. This ensures that after the data is sent over the serial port, the controller can correctly recognize it. Then, the time parameter is split into high and low bytes using `list()`, where `little` indicates low byte first. These two bytes are then sent to the serial port.
 
 {lineno-start=44
 
-```python {lineno-start=}
+```python
     time = 0 if time < 0 else time
     time = 30000 if time > 30000 else time
-    time_list = list(time.to_bytes(2, 'little'))     
+    time_list = list(time.to_bytes(2, 'little'))
     buf.append(time_list[0])
     buf.append(time_list[1])
 ```
@@ -126,22 +128,22 @@ After that, the ID and position values are also filtered. If the incoming ID is 
 
 {lineno-start=50}
 
-```python {lineno-start=}
+```python
     servo_id = 254 if (servo_id < 1 or servo_id > 254) else servo_id
-    buf.append(servo_id)  
+    buf.append(servo_id)
     
     servo_pulse = 500 if servo_pulse < 500 else servo_pulse
     servo_pulse = 2500 if servo_pulse > 2500 else servo_pulse
-    pulse_list = list(servo_pulse.to_bytes(2, 'little'))     
+    pulse_list = list(servo_pulse.to_bytes(2, 'little'))
     buf.append(pulse_list[0])
-    buf.append(pulse_list[1]) 
+    buf.append(pulse_list[1])
 ```
 
 Finally, the `buf` data is sent to the serial port using the `write()` method.
 
 {lineno-start=59}
 
-```python {lineno-start=}
+```python
     serialHandle.write(buf)
 ```
 
@@ -149,16 +151,17 @@ Finally, the `buf` data is sent to the serial port using the `write()` method.
 
 {lineno-start=11}
 
-```python {lineno-start=}
+```python
 serialHandle = serial.Serial("/dev/ttyAMA0", 9600)   
 ```
+
 Create an instance of the servo control object and set the baud rate to 9600.
 
 (3) Control Servo Movement
 
 {lineno-start=4}
 
-```python {lineno-start=}
+```python
 if __name__ == '__main__': 
     while True:
         ServoControl.setPWMServoMove(1, 500, 1000)
@@ -166,6 +169,7 @@ if __name__ == '__main__':
         ServoControl.setPWMServoMove(1, 2500, 1000)
         time.sleep(2)
 ```
+
 After the main program runs in `PWMServoControl`, it calls the `setPWMServoMove()` function to control Servo ID 1 to move from position 500 to 2500.
 
 ### 6.2.2 Case 2 Control a Single Servo’s Speed
@@ -192,32 +196,34 @@ After the program runs, the servo rotates to position 500 at a speed of 1200 ms,
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1jlTkppO-WpMDYGYXzc8DmjvDaGhfmBkA?usp=sharing)
 
 (1) Import Necessary Libraries
 
 {lineno-start=1}
 
-```python {lineno-start=}
+```python
 import ServoControl
 import time
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo. In the `ServoControl` library, the main method used is `setPWMServoMove()`, which changes the servo speed by adjusting the movement duration.
 
 (2) UART Initialization
 
 {lineno-start=11}
 
-```python {lineno-start=}
+```python
 serialHandle = serial.Serial("/dev/ttyAMA0", 9600)   
 ```
+
 Create an instance of the servo control object and set the baud rate to 9600.
 
 (3) Control Servo Movement
 
 {lineno-start=4}
 
-```python {lineno-start=}
+```python
 if __name__ == '__main__': 
     while True:
         ServoControl.setPWMServoMove(1, 500, 1200)
@@ -229,6 +235,7 @@ if __name__ == '__main__':
         ServoControl.setPWMServoMove(1, 2500, 400)
         time.sleep(1)
 ```
+
 In the main program of `PWMServoControl`, the `setPWMServoMove()` function is first called to move Servo ID 1 from position 500 to 2500 over 1200 ms. Then, Servo ID 1 is moved back from position 2500 to 500 over 400 ms. When the rotation angle is the same, a shorter duration results in a higher speed.
 
 ### 6.2.3 Case 3 Control Multiple Servos
@@ -255,21 +262,22 @@ After running the program, Servo 1 and Servo 2 will move back and forth between 
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1NccPjP-hxWFPfVpLSG1aQ128pGMhZhQ1?usp=sharing)
 
 (1) Import Necessary Libraries
 
 {lineno-start=1}
 
-```python {lineno-start=}
+```python
 import ServoControl
 import time
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo. In this example, the `setMorePWMServoMove()` method is mainly used to control multiple servos.
 
 {lineno-start=37}
 
-```python {lineno-start=}
+```python
  
 def setPWMServoMove(servo_id, servo_pulse, time):
     buf = bytearray(b'\x55\x55')   
@@ -294,20 +302,22 @@ def setPWMServoMove(servo_id, servo_pulse, time):
 
     serialHandle.write(buf)
 ```
+
 According to the communication protocol, the frame header, data length, command, and the number of servos to be controlled are first sent to the serial port.
 
 {lineno-start=39}
 
-```python {lineno-start=}
+```python
     buf = bytearray(b'\x55\x55')   
     buf.append(0x08)  
     buf.append(LOBOT_CMD_SERVO_MOVE)  
 ```
+
 Exception filtering for servo count and rotation time is performed to ensure that the 16-ch servo controller can correctly recognize the data sent via the serial port.
 
 {lineno-start=67}
 
-```python {lineno-start=}
+```python
     servos_count = 1 if servos_count < 1 else servos_count
     servos_count = 254 if servos_count > 254 else servos_count
     buf.append(servos_count)  
@@ -318,11 +328,12 @@ Exception filtering for servo count and rotation time is performed to ensure tha
     buf.append(time_list[0])     
     buf.append(time_list[1])
 ```
+
 A `for` loop is used to send data from the `servos` list to the serial port. Set every two elements as one group: the first element is the servo ID, and the second is the target position. For example: `list` = [1, 500, 2, 300] means that servo ID 1 will move to position 500, and servo ID 2 will move to position 300. Finally, the `buf` data is sent to the serial port using the `write()` method.
 
 {lineno-start=77}
 
-```python {lineno-start=}
+```python
     for i in range(servos_count):
         buf.append(servos[i*2])   
         pos = servos[i*2+1]
@@ -332,21 +343,23 @@ A `for` loop is used to send data from the `servos` list to the serial port. Set
         buf.append(pos_list[0])     
         buf.append(pos_list[1]
 ```
+
 (2) UART Initialization
 
 {lineno-start=11}
 
-```python {lineno-start=}
+```python
 serialHandle = serial.Serial("/dev/ttyAMA0", 9600)   
 ```
+
 Create an instance of the servo control object and set the baud rate to 9600.
 
 (3) Control Servo Movement
 
 {lineno-start=4}
 
-```python {lineno-start=}
-if __name__ == '__main__': 
+```python
+if __name__ == '__main__':
     while True:
         servos = [1, 2500, 2, 500]
         ServoControl.setPWMServoMoveByArray(servos, 2, 1000)
@@ -355,6 +368,7 @@ if __name__ == '__main__':
         ServoControl.setPWMServoMoveByArray(servos, 2, 1000)
         time.sleep(2)
 ```
+
 In the main program of `PWMServoControl`, a `servos` queue is first created to set servo ID 1 to position 2500 and servo ID 2 to position 500. Then, the `setPWMServoMoreByarray()` function is called to move these two servos to their target positions within 1000 ms. After a 2-second delay, servo ID 1 is set to position 500 and servo ID 2 to position 2500. Then, the `setPWMServoMoreByArray()` function is called again to move the servos, also with a duration of 1000 ms.
 
 ### 6.2.4 Case 4 Central Position & Deviation Adjustment
@@ -385,33 +399,35 @@ The servo first returns to the central position. After a short delay, it rotates
 
 * **Program Brief Analysis**
 
-[Source Code]()
+[Source Code](https://drive.google.com/drive/folders/1KIbyCVaws6UetjA5DRlhcy3xi1r-OSfn?usp=sharing)
 
 (1) Import Necessary Libraries
 
 {lineno-start=1}
 
-```python {lineno-start=}
+```python
 import ServoControl
 import time
 ```
+
 The library includes the necessary modules for communicating with the 16-ch servo controller. You can use the predefined variables and functions in it to control the servo. In the `ServoControl` library file, the main method called is `setPWMServoMove()`.
 
 (2) UART Initialization
 
 {lineno-start=11}
 
-```python {lineno-start=}
-serialHandle = serial.Serial("/dev/ttyAMA0", 9600)   
+```python
+serialHandle = serial.Serial("/dev/ttyAMA0", 9600)
 ```
+
 Create an instance of the servo control object and set the baud rate to 9600.
 
 (3) Control Servo Movement
 
 {lineno-start=4}
 
-```python {lineno-start=}
-if __name__ == '__main__': 
+```python
+if __name__ == '__main__':
     deviation = 80
     ServoControl.setPWMServoMove(1, 1500, 800)
     time.sleep(2)
@@ -419,4 +435,5 @@ if __name__ == '__main__':
     while True:
         time.sleep(1)
 ```
+
 In the main program of `PWMServoMedAndBias`, a variable named `deviation` is first created to store the deviation value. The `setPWMServoMove()` function is initially called to move servo ID 1 to position 1500 within 800 ms. After a 2-second delay, the servo is moved again based on its previous position (1500) plus the deviation value, thereby achieving a software-based deviation adjustment.
