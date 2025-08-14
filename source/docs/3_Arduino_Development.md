@@ -92,7 +92,7 @@ The port may not be unique. Arduino IDE will add the Arduino model after the cor
 
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" width="700px"/>
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
@@ -143,9 +143,9 @@ Instantiate the servo control object. Set the serial port baud rate to 9600.
 
 ```
 void loop() {
-  myse.moveServo(1,500,800); //1号舵机800ms移动至500位置
+  myse.moveServo(1,500,800);  
   delay(1500);
-  myse.moveServo(1,2500,800); //1号舵机800ms移动至2500位置
+  myse.moveServo(1,2500,800);  
   delay(1500);
 }
 ```
@@ -176,7 +176,7 @@ The port may not be unique. Arduino IDE will add the Arduino model after the cor
 
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" width="700px"/>
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
@@ -226,13 +226,13 @@ Instantiate the servo control object. Set the serial port baud rate to 9600.
 
 ```
 void loop() {
-  myse.moveServo(1,500,800); //1号舵机800ms移动至500位置
+  myse.moveServo(1,500,800);  
   delay(1500);
-  myse.moveServo(1,2500,800); //1号舵机800ms移动至2500位置
+  myse.moveServo(1,2500,800);  
   delay(1500);
-  myse.moveServo(1,500,1200); //1号舵机1200ms移动至500位置
+  myse.moveServo(1,500,1200);  
   delay(1500);
-  myse.moveServo(1,2500,1200); //1号舵机1200ms移动至2500位置
+  myse.moveServo(1,2500,1200);  
   delay(1500);
 }
 ```
@@ -263,7 +263,7 @@ The port may not be unique. Arduino IDE will add the Arduino model after the cor
 
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" width="700px" />
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
@@ -359,7 +359,7 @@ The port may not be unique. Arduino IDE will add the Arduino model after the cor
 
 :::
 
-<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" />
+<img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" width="700px"/>
 
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 

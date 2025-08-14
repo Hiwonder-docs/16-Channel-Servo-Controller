@@ -1,7 +1,5 @@
 # 5. LSC-16 Controller Secondary Development-STM32 Development
 
-<img src="../_static/media/chapter_5/image2.png" class="common_img" />
-
 ## 5.1 Getting Ready
 
 ### 5.1.1 Wiring Instruction
@@ -29,9 +27,7 @@ In this case, commands are sent from the serial port to the servo controller, wh
 
 * **Run Program**
 
-(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [2. Software->STM32 Software.
-
-<img src="../_static/media/chapter_5/image5.png" class="common_img" />
+(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software]().
 
 (2) Configure it as shown in the figure:
 
@@ -155,9 +151,7 @@ In this case, commands are sent from the serial port to the servo controller, wh
 
 * **Run Program**
 
-(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [2. Software->STM32 Software.
-
-<img src="../_static/media/chapter_5/image5.png" class="common_img" />
+(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software](Appendix.md).
 
 (2) Configure it as shown in the figure:
 
@@ -286,9 +280,7 @@ In this case, commands are sent from the serial port to the servo controller, wh
 
 * **Run Program**
 
-(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [2. Software->STM32 Software](Appendix.md).
-
-<img src="../_static/media/chapter_5/image5.png" class="common_img" />
+(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software](Appendix.md).
 
 (2) Configure it as shown in the figure:
 
@@ -436,7 +428,7 @@ The servo deviation is caused by the interval between the teeth on the spline of
 
 * **Run Program**
 
-(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [2. Software->STM32 Software.
+(1) Open the <img src="../_static/media/chapter_5/image5.png" /> download tool in [Appendix&gt;STM32 Software](Appendix.md).
 
 <img src="../_static/media/chapter_5/image5.png" class="common_img" />
 
