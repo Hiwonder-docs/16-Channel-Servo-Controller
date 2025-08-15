@@ -467,8 +467,9 @@ The specific control method is as follows:
 
 ## 1.8 Specification
 
-| Dimension | 58mm*42mm |
+|                       Name                       | Specification |
 |:---:|:---:|
+| Dimension | 58mm*42mm |
 | Mounting hole distance | 49mm*34mm |
 | weight | About 18g |
 | USB control | Support |

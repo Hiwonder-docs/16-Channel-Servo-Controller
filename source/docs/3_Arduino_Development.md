@@ -124,7 +124,7 @@ The function package mainly encapsulates various function modules for the 16-cha
 
 (2) Initialize Serial Port
 
-{lineno-start3=}
+{lineno-start=3}
 
 ```
 LobotServoController myse;     

@@ -15,13 +15,41 @@ This section employs an open-source servo controller, a STC15W4K32S4 microcontro
 
 The pin wiring method is shown in the table below:
 
-| 16-ch servo controller | Picture for 16-ch servo controller | Open-source servo controller | Picture for open-source servo controller |
-| :--- | :--- | :--- | :--- |
-| RX | <img src="../_static/media/chapter_4/image4.jpeg" class="common_img" /> | TX | <img src="../_static/media/chapter_4/image5.jpeg" class="common_img" /> |
-| TX | RX |||
-| GND | GND |||
-| Power Input + | <img src="../_static/media/chapter_4/image4.jpeg" class="common_img" /> | Servo Interface + | <img src="../_static/media/chapter_4/image6.jpeg" class="common_img" /> |
-| Power Input - | Servo Interface - |||
+<table  class="docutils-nobg" style="margin:0 auto" border="1">
+  <tr>
+    <th>16-ch servo controller</th>
+    <th>Picture for 16-ch servo controller</th>
+    <th>Open-source servo controller</th>
+    <th>Picture for open-source servo controller</th>
+  </tr>
+  <tr>
+    <td>RX</td>
+    <td rowspan="3"><img src="../_static/media/chapter_4/image4.jpeg" class="common_img" /></td>
+    <td>TX</td>
+    <td rowspan="3"><img src="../_static/media/chapter_4/image5.jpeg" class="common_img" /></td>
+  </tr>
+  <tr>
+    <td>TX</td>
+    <td>RX</td>
+  </tr>
+  <tr>
+    <td>GND</td>
+    <td></td>
+    <td>GND</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Power Input +</td>
+    <td rowspan="2"><img src="../_static/media/chapter_4/image2.png" class="common_img" /></td>
+    <td>Servo Interface +</td>
+    <td rowspan="2"><img src="../_static/media/chapter_4/image6.jpeg" class="common_img" /></td>
+  </tr>
+  <tr>
+    <td>Power Input -</td>
+    <td>Servo Interface -</td>
+  </tr>
+</table>
+
 
 :::{Note}
 * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.
