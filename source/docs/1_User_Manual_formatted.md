@@ -107,8 +107,6 @@ Locate the **Hiwonder Servo Control Steup.exe** in [Appendix -> PC Software](App
 
 Install the software according to the installation prompts.
 
-
-
 <img src="../_static/media/chapter_1/image9.png" class="common_img" />
 
 <img src="../_static/media/chapter_1/image10.png" class="common_img" />

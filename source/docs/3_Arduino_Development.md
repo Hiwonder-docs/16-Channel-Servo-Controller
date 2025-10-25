@@ -354,9 +354,7 @@ You must add the library file when running the program for the first time. Other
 (3) Connect Arduino UNO to your computer with a USB cable. Select the board type as **"Arduino UNO"** and the corresponding port.
 
 :::{Note}
-
 The port may not be unique. Arduino IDE will add the Arduino model after the corresponding port number.
-
 :::
 
 <img src="../_static/media/chapter_3/image9.jpeg"  class="common_img" width="700px"/>
@@ -364,9 +362,7 @@ The port may not be unique. Arduino IDE will add the Arduino model after the cor
 <img src="../_static/media/chapter_3/image10.png" class="common_img" />
 
 :::{Note}
-
 When downloading the program, the serial ports of the Arduino UNO and the servo controller should be disconnected. Otherwise, the program will fail to be downloaded.
-
 :::
 
 (4) After Arduino UNO is connected, click <img src="../_static/media/chapter_3/image11.png"  /> to download the program. After the download is complete, follow [Wiring Instruction](#anchor_3_1_1) to connect the servo controller to the Arduino UNO. Then, switch the servo controller on. The servo 1 will start to rotate. 

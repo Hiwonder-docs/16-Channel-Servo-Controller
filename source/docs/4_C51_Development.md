@@ -15,7 +15,7 @@ This section employs an open-source servo controller, a STC15W4K32S4 microcontro
 
 The pin wiring method is shown in the table below:
 
-<table  class="docutils-nobg" style="margin:0 auto" border="1">
+<table  class="docutils-nobg" border="1">
   <tr>
     <th>16-ch servo controller</th>
     <th>Picture for 16-ch servo controller</th>
@@ -49,7 +49,6 @@ The pin wiring method is shown in the table below:
     <td>Servo Interface -</td>
   </tr>
 </table>
-
 
 :::{Note}
 * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.
